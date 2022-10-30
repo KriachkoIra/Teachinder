@@ -40,7 +40,7 @@
         
     <div class="top-teach-params age-param">
         <label for="teacher-age">Age</label>
-            <select id="teacher-age" name="teacher-age">
+        <select id="teacher-age" name="teacher-age">
             <option value="18-31">18-31</option>
             <option value="31-45">31-45</option>
             <option value="45+">45+</option>
@@ -385,12 +385,79 @@
   <div class="popupHeader"><h1>Add Teacher</h1></div>
   
   <form action="#">
-    <input placeholder="Name" type="text" required />
-    <input placeholder="Email" type="email" required />
-    <input placeholder="Subject" type="text" required />
-    <textarea placeholder="Comment"></textarea>
-    <input class="formBtn" type="submit" />
-    <input class="formBtn" type="reset" />
+      <div>
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter name" required>
+      </div>
+      
+      <div>
+        <label for="teacher-speciality">Speciality</label>
+        <select id="teacher-speciality" name="teacher-speciality" required>
+            <option value="maths">Mathematics</option>
+            <option value="soft">Software Engineering</option>
+            <option value="biology">Biology</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="history">History</option>
+            <option value="english">English</option>
+            <option value="chess">Chess</option>
+        </select>
+      </div>
+      
+      <div class="two-in-row">
+        <div>
+            <label for="teacher-country">Country</label>
+            <select id="teacher-country" name="teacher-country" required>
+                <option value="ukraine">Ukraine</option>
+                <option value="usa">USA</option>
+                <option value="germany">Germany</option>
+                <option value="china">China</option>
+                <option value="england">England</option>
+                <option value="poland">Poland</option>
+                <option value="france">France</option>
+            </select>
+        </div>
+        <div>
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>  
+      </div>
+      
+      <div>
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" required>
+      </div>
+      
+      <div>
+        <label for="sex" class="sex-label">Sex</label>
+        <div class="sex">
+        <input type="radio" id="sex" name="sex" value="male" required>
+        <label for="male">Male</label>
+        </div>
+        <div class="sex">
+        <input type="radio" id="sex" name="sex" value="female">
+        <label for="female">Female</label>  
+        </div> 
+      </div>
+     
+      <div>
+          <label for="bcolor">Background color</label>
+          <input type="color" id="bcolor" name="bcolor" value="#ff0000" required>
+      </div>
+      
+      <div>
+          <label for="comment">Notes (optional)</label>
+          <textarea id="comment" name="comment"></textarea>
+      </div>
+      
+    <input class="formBtn" id="formBtn" type="submit" value="Add"/>
   </form>
 </div>      
 <script src="scripts/popup.js"></script>        

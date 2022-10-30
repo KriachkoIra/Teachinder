@@ -460,25 +460,65 @@ footer{
 
 #myForm { 
   display: none;
-  width: 400px;
+  width: 500px;
+  height: 670px;
   background: #fff;
   position: fixed;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%)
+  -webkit-transform: translate(-50%,-50%);
+  box-shadow: 0px 0px 5px 5px #4d4d4d;
+  display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#myForm form{ 
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #4d4d4d;
+}
+
+#myForm form > div > label{ 
+    display: block;
+    margin-bottom: 5px;
+}
+
+#myForm form > div{ 
+    margin-top: 15px;
+}
+
+#myForm input, #myForm textarea, #myForm select{ 
+    border: 1px solid #4d4d4d;
+    color: #4d4d4d;
+}
+
+#myForm input[type="radio"]{
+    width: 20%;
+}
+
+#myForm form > div > input, #myForm textarea{ 
+    width: 100%;
+    padding: 5px;
+}
+
+#myForm form > div > select{
+    width: 103%;
+    padding: 5px;
 }
 
 .popupHeader{
-    background-color: dimgray;
+    background-color: #4d4d4d;
+    border: 1px solid #363535;
     height: 50px;
     color: white;
 }
 
 .popupHeader h1{
     margin: 0;
+    padding: 10px;
 }
-
 
 .closeButton{
     position: absolute;
@@ -487,28 +527,22 @@ footer{
     border: none;
     background-color: transparent;
     font-size: 24px;
-    
+    color: white;
 }
 
-#myForm input, #myForm textarea { 
-  margin: .8em auto;
-  font-family: inherit; 
-  text-transform: inherit; 
-  font-size: inherit;
-  display: block; 
-  width: 280px; 
-  padding: .4em;
+.closeButton:hover{
+    color: lightgrey;
+    background-color: transparent;
 }
 
 #myForm textarea { 
-    height: 80px; resize: none; 
+    height: 80px; 
+    resize: none; 
 }
 
 .formBtn{ 
   width: 140px;
   display: inline-block;
-  background: teal;
-  color: #fff;
   font-weight: 100;
   font-size: 1.2em;
   border: none;
@@ -522,5 +556,68 @@ footer{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.two-in-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.two-in-row div{
+    width: 45%;
+    text-align: center;
+    margin: 5px 0 5px 0;
+}
+
+.two-in-row label{
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 5px;
+    display: block;
+}
+
+.two-in-row input{
+    width: 180px;
+    padding: 5px;
+}
+
+.two-in-row select{
+    width: 192px;
+    padding: 5px;
+}
+
+.sex{
+    display: inline-block;
+    width: 85px;
+}
+
+.sex-label{
+    display: inline !important;
+    margin-right: 10px;
+}
+
+#myForm label[for="bcolor"]{
+    display: inline;
+}
+
+#myForm input[type="color"]{
+    display: inline;
+    width: 50px;
+    margin-left: 10px;
+}
+
+#formBtn{
+    color: #f77361 !important;
+    background-color: transparent;
+    border: 2px solid #f77361 !important;
+    margin: 12px 0 0 0px;
+    width: 103%;
+    height: 35px;
+}
+
+#formBtn:hover{
+    color: white !important;
+    background-color: #ce625d;
 }
