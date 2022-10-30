@@ -31,7 +31,7 @@
     
     <main>
     <!-- ------------ top teachers --------------------->    
-    
+    <script src="scripts/teacherInfo.js"></script>
     <div class="top-teachers" id="top-teachers">
         
     <h2>Top Teachers</h2>
@@ -61,7 +61,7 @@
     </div>
         
     <div class="top-teach-params sex-param">
-        <label for="teacher-sex">Age</label>
+        <label for="teacher-sex">Sex</label>
             <select id="teacher-sex" name="teacher-sex">
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -85,7 +85,7 @@
     <!-------------------- list of teachers --------------->
         
     <div class="teachers-div">
-    <div class="teacher">
+    <div class="teacher" onclick="openInfo()">
         <div class="teacher-img"><img src="img/teachers/1.png"></div>
         <div style="margin-left: -30px">
         <p class="teacher-name">Ihor Tkachuk</p>  
@@ -94,7 +94,7 @@
         </div>
     </div>
         
-    <div class="teacher">
+    <div class="teacher" >
         <div class="teacher-img"><img src="img/teachers/2.png"></div> 
         <div style="margin-left: -30px">
         <p class="teacher-name">Floor Jansen</p>  
@@ -283,26 +283,26 @@
       <div class="mySlides fade">
           <div class="teachers-slide-div" style="width:100%">
           <div class="inner-div"> 
-        <div class="teacher-slide">
+        <div class="teacher-slide" onclick="openInfo()">
             <div class="teacher-img"><img src="img/teachers/1.png"></div>   
             <p class="teacher-name">Ihor Tkachuk</p>  
             <p class="teacher-country">Ukraine</p>
         </div>
 
-        <div class="teacher-slide">
+        <div class="teacher-slide" id="teacher">
             <div class="teacher-img"><img src="img/teachers/2.png"></div>   
             <p class="teacher-name">Floor Jansen</p>  
             <p class="teacher-country">Denmark</p>
         </div>
             </div>
         <div class="inner-div"> 
-        <div class="teacher-slide">
+        <div class="teacher-slide" id="teacher">
             <div class="teacher-img"><img src="img/teachers/3.png"></div>   
             <p class="teacher-name">John Burke</p> 
             <p class="teacher-country">Belgium</p>
         </div>
 
-        <div class="teacher-slide">
+        <div class="teacher-slide" id="teacher">
             <div class="teacher-img"><img src="img/teachers/4.png"></div>   
             <p class="teacher-name">Rachel Andrew</p>  
             <p class="teacher-country">UK</p>
@@ -311,16 +311,16 @@
       </div>
         </div>
 
-      <div class="mySlides fade">
+      <div class="mySlides fade" >
           <div class="teachers-slide-div" style="width:100%">
           <div class="inner-div">
-          <div class="teacher-slide">
+          <div class="teacher-slide" id="teacher">
               <div class="teacher-img"><img src="img/teachers/5.png"></div>   
         <p class="teacher-name">Rudoslaw Ljuboevic</p>  
         <p class="teacher-country">Poland</p>
     </div>
         
-    <div class="teacher-slide">
+    <div class="teacher-slide" id="teacher">
         <div class="teacher-img"><img src="img/teachers/6.png"></div>   
         <p class="teacher-name">Tyler Davis</p>  
         <p class="teacher-country">USA</p>
@@ -328,14 +328,14 @@
         
         </div>
         <div class="inner-div">
-    <div class="teacher-slide">
+    <div class="teacher-slide" id="teacher">
         <div class="teacher-img"><img src="img/teachers/7.png"></div>    
         <p class="teacher-name">Anna Muzychuk</p>  
         <p class="teacher-country">Belarus</p>
     </div>
         
         
-    <div class="teacher-slide">
+    <div class="teacher-slide" id="teacher">
         <div class="teacher-img no-photo"><p>P.R.</p></div>
         <p class="teacher-name">Pragg Rameshbabu</p>  
         <p class="teacher-country">India</p>
@@ -345,10 +345,10 @@
       </div>
 
       <div class="mySlides fade">
-          <div class="teachers-slide-div" style="width:100%">
+          <div class="teachers-slide-div" id="teacher" style="width:100%">
           <div class="inner-div">
           <div class="teacher-slide">
-              <div class="teacher-img no-photo"><p>A.T.</p></div>    
+              <div class="teacher-img no-photo"><p>A.T.</p></div>
         <p class="teacher-name">Ari Tang</p>  
         <p class="teacher-country">China</p>
               </div>
@@ -378,7 +378,7 @@
         
 <section>
 
-<!-- Popup Div Starts Here -->
+<!-- Add Teacher popup -->
 <div class="bg" id="bg"></div>
 <div id="myForm">
   <button onclick="closeForm()" class="closeButton">X</button>
@@ -461,6 +461,32 @@
   </form>
 </div>      
 <script src="scripts/popup.js"></script>        
+</section>
+        
+        
+<section>
+
+<!-- Info popup -->
+<div id="info">
+    <script src="scripts/openMap.js"></script>
+  <button onclick="closeInfo()" class="closeButton">X</button>
+  <div class="popupHeader"><h1>Teacher Info</h1></div>
+  <div class="inner-info">
+  <img src="img/teachers/1.png" alt="Ihor Tkachuk photo">
+    <div class="info-aside">
+      <h2>Ihor Tkachuk</h2>
+      <p>Chemistry</p>
+      <p>Ukraine</p>
+      <p>35, male</p>
+      <a href="mailto:Ihor_Tkachuk@domain.com">Ihor_Tkachuk@domain.com</a>
+      <p>+380123456789</p>
+    </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <button id="mapBtn" onclick="openMap()">toggle map</button>
+      <iframe id="teacherMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10158.983397166836!2d30.5193942!3d50.4644572!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x20e77fb079389395!2z0J3QsNGG0ZbQvtC90LDQu9GM0L3QuNC5INGD0L3RltCy0LXRgNGB0LjRgtC10YIgwqvQmtC40ZTQstC-LdCc0L7Qs9C40LvRj9C90YHRjNC60LAg0LDQutCw0LTQtdC80ZbRj8K7!5e0!3m2!1suk!2sde!4v1667162795681!5m2!1suk!2sde" style="display: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  
+</div>              
 </section>
         
 <!------------------ Footer ------------------->

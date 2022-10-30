@@ -367,82 +367,8 @@ footer{
     margin-left: -15px;
 }
 
-/* mobile */
-@media only screen and (max-device-width: 481px){
-    body{
-        padding: 0;
-    }
-    
-    header{
-        width: 100%;
-        display: block;
-    }
-    
-    header img{
-        width: 100%;
-        height: auto;
-    }
-    
-    .search-form{
-        margin-top: 20px;
-    }
-    
-    .search-form input{
-        width: 80%;
-        height: 50px;
-    }
-    
-    .search-form input{
-        width: 80%;
-        height: 60px;
-    }
-    
-    input[type="search"]::placeholder {
-      font-size: 24px;
-      color: gray;
-    }
-    
-    .search-form button{
-        width: 20%;
-        font-size: 24px;
-    }
-    
-    ul{
-        display: flex;
-        font-size: 30px;
-    }
-    
-    li:last-child{
-        margin-left: 13px;
-        align-self: center;
-    }
-    
-    li button{
-        font-size: 24px;
-        align-self: flex-end;
-    }
-    
-    .top-teach-params-form{
-        font-size: 32px;
-        justify-content: space-around;
-        flex-flow: wrap;
-        margin-bottom: 100px;
-    }
-    
-    .top-teach-params-form select{
-        font-size: 30px;
-    }
-    
-    .top-teach-params-form div{
-        
-    }
-}
-
 /* add teacher popup */
 #contact { 
-  -webkit-user-select: none; /* Chrome/Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
   margin: 4em auto;
   width: 100px; 
   height: 30px; 
@@ -458,7 +384,7 @@ footer{
 #contact:hover { background: #666; }
 #contact:active { background: #444; }
 
-#myForm { 
+#myForm, #info { 
   display: none;
   width: 500px;
   height: 670px;
@@ -469,9 +395,6 @@ footer{
   transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   box-shadow: 0px 0px 5px 5px #4d4d4d;
-  display: flex;
-    align-content: center;
-    justify-content: center;
 }
 
 #myForm form{ 
@@ -621,3 +544,270 @@ footer{
     color: white !important;
     background-color: #ce625d;
 }
+
+#info{
+  width: 600px;
+  height: 470px;
+}
+
+/* teacher info popup */
+.inner-info{
+    padding: 20px;
+}
+
+.info-aside{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.inner-info img{
+    width: 210px;
+}
+
+.inner-info h2{
+    text-align: left;
+    margin: 0;
+}
+
+.inner-info a{
+    color: cadetblue;
+    text-decoration: none;
+}
+
+.inner-info button{
+    border: none;
+    background-color: transparent;
+    color: cadetblue;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.inner-info iframe{
+    border: none;
+    margin-top: 12px;
+    height: 220px;
+    width: 562px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile */
+@media only screen and (max-device-width: 481px){
+    body{
+        padding: 0;
+    }
+    
+    header{
+        width: 100%;
+        display: block;
+    }
+    
+    header img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .search-form{
+        margin-top: 20px;
+    }
+    
+    .search-form input{
+        width: 80%;
+        height: 50px;
+    }
+    
+    .search-form input{
+        padding-top: 15px;
+        width: 80%;
+        height: 60px;
+    }
+    
+    input[type="search"]::placeholder {
+      font-size: 30px;
+      color: gray;
+    }
+    
+    .search-form button{
+        width: 20%;
+        font-size: 30px;
+    }
+    
+    ul{
+        display: flex;
+        font-size: 30px;
+    }
+    
+    li:last-child{
+        margin-left: 13px;
+        align-self: center;
+    }
+    
+    li button{
+        font-size: 24px;
+        align-self: flex-end;
+    }
+    
+    .top-teach-params-form{
+        font-size: 40px;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-content: space-around;
+        height: 200px;
+    }
+    
+    
+    .top-teach-params-form select{
+        font-size: 30px;
+    }
+    
+    input[type="checkbox"]{
+        height: 35px;
+        width: 35px;
+    }
+    
+    .top-teach-params{
+        margin-bottom: 15px;
+    }
+    
+    /* top teachers */
+    .teacher{
+        display: block;
+        width: 50%;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .teacher p{
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+    
+    .teacher-img{
+        border: 8px solid #f77361;
+        height: 300px;
+        width: 300px;
+    }
+    
+    .teacher-img img{
+        height: 300px;
+        width: 310px;
+    }
+    
+    .teacher-slide p, .next, .prev{
+        font-size: 32px;
+    }
+    
+    .next{
+        height: 30px;
+    }
+    
+    #myForm, #info{
+        height: 80vh !important;
+        width: 85vw;
+        font-size: 42px;
+    }
+    
+    #myForm label{
+        text-align: center;
+    }
+    
+    #myForm input, select{
+        font-size: 42px;
+    }
+    
+    #myForm > form > div{
+        margin-bottom: 30px;
+    }
+    
+    input[type="radio"]{
+        height: 35px;
+    }
+    
+    .sex{
+        display: inline;
+    }
+    
+    input[type="color"]{
+        height: 45px;
+        width: 75px !important;
+    }
+    
+    .two-in-row div, .two-in-row input, .two-in-row select{
+        width: 100%;
+    }
+    
+    .popupHeader{
+        height: 90px;
+    }
+    
+    #myForm textarea{
+        height: 250px;
+    }
+    
+    #formBtn{
+        height: 70px;
+    }
+    
+    /* techer info popup */
+    #info img{
+        display: block;
+        margin: auto;
+        height: 400px;
+        width: 400px;
+    }
+    
+    .info-aside{
+        display: block;
+        text-align: center;
+    }
+    
+    .info-aside h2{
+        text-align: center;
+    }
+    
+    .info-aside p{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .inner-info > p{
+        font-size: 36px;
+        text-align: justify;
+    }
+    
+    #info .inner-info button{
+        display: none;
+    }
+    
+     #info iframe{
+        display: block !important;
+        height: 300px;
+         width: 100%;
+    }
+    
+    table, thead th{
+        font-size: 32px;
+    }
+    
+    .pagination-number, .pagination-button{
+        font-size: 32px;
+    }
+    
+    .no-photo p{
+        font-size: 60px;
+        margin-top: 40%;
+        margin-left: 5%;
+    }
+}
+
