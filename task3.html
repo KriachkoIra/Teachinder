@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>Task 3</title>
+        
+        <script>
+            function foo() { 
+                var arr = document.querySelectorAll('[data-bgcolor]');
+                
+                arr.forEach(element => {
+                    var newColor = element.getAttribute('data-bgcolor');
+                    //alert(newColor);
+                    element.style.backgroundColor = newColor;
+                    });}                    
+        </script>
+    </head>
+    
+    <body onload="foo()">
+        <header>
+            <h3>Full version of techer's card</h3>
+            
+        </header>
+        <section> 
+            <p>Full name: teacher's_name</p>
+            <p>Sex: teacher's_sex</p>
+            <p data-bgcolor="lightgreen">Age: teacher's_age</p>
+            <p data-bgcolor="aqua">E-mail: <a href = "mailto: abc@example.com">teacher's_email</a></p>
+            <p>Phone number: <a href="tel:123-456-7890">123-456-7890</a></p>
+            <p>Country: teacher's_country</p>
+            <p>City: teacher's_city</p>
+            <label for="comment">Comment:</label><br>
+            <textarea id="comment" rows="4" cols="50" readonly>teacher's_comment</textarea><br>
+        </section>
+        <aside>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2242.938754515674!2d37.748229015830134!3d55.79430138056445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535208f08bd59%3A0xeabd1cf3c59680d6!2zI9Cf0KPQotCG0J3Ql9CU0J7QpdCd0IbQotCS0JDQoNCs!5e0!3m2!1suk!2sde!4v1665655409552!5m2!1suk!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </aside>  
+
+    </body>
+    
+</html>
