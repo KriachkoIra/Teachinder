@@ -1,0 +1,813 @@
+html{
+    font-family: sans-serif;
+    margin: 40px 10vw 30px 10vw;
+}
+
+body{
+    margin: 0;
+    padding: 0px 100px 0px 100px;
+    min-width: 600px;
+}
+
+/* header */
+
+header{
+    min-width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1{
+    margin: 0;
+}
+
+/* search form */
+.search-form {
+  color: #555;
+  display: flex;
+  padding: 2px;
+  margin: 0 0 30px;
+}
+
+input[type="search"] {
+  border: 1px solid dimgray;
+  padding: 7px 8px;
+  font-size: 14px;
+  margin-right: 8px;
+  width: 200px;
+  transition: width 0.8s;
+}
+
+input[type="search"]:hover {
+    width: 250px;
+}
+
+input[type="search"]::placeholder {
+  color: dimgray;
+  font-size: 12px;
+}
+
+.search-button{
+    color: #f77361;
+    background-color: transparent;
+    border: 1px solid #f77361;
+}
+
+button:hover{
+    color: white;
+    background-color: #ce625d;
+}
+
+/* navbar */
+nav ul, footer ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: black;
+}
+
+nav li, footer li {
+  float: left;
+}
+
+ nav li a, footer li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color:  #f77361;
+     font-weight: 600;
+}
+
+ nav li button, footer li button {
+     margin-top: 5px;
+     padding: 5px 10px 5px 10px;
+  color:  #f77361;
+  background-color: transparent;
+  border: 1px solid #f77361;
+     font-weight: 600;
+}
+
+nav li a:hover, footer li a:hover{
+  color: #ce625d;
+}
+
+/* headers */
+h2{
+    text-align: center;
+}
+
+/* teachers params */
+.top-teach-params-form{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: dimgray;
+}
+
+.top-teach-params-form div{
+    border-right: 2px dotted dimgray;
+    margin: 0px 0px 0px 12px;
+    padding: 0px 12px 0px 0px;
+    vertical-align: middle;
+}
+
+.top-teach-params-form div:last-child{
+   border: none;
+}
+
+.top-teach-params-form select{
+    padding: 5px 5px 5px 5px;
+}
+
+.top-teach-params-form label{
+    margin: 0 5px 0 5px;
+}
+
+.top-teach-params-form label:hover{
+    color: black;
+}
+
+/* avatars */
+
+.teacher-img{
+    margin: auto;
+    overflow: hidden;
+    height: 150px;
+    width: 155px;
+    border-radius: 50%;
+    border: 4px solid #f77361;
+    font-size: 24px;
+    color: #f77361;
+    text-align: center;
+}
+
+.teacher-img:hover{
+    border: 4px solid #ce625d;
+}
+
+.no-photo:hover{
+    border: 4px solid #ce625d;
+    font-size: 30px;
+    color: #ce625d;
+}
+
+.teacher img, .teacher-slide img {
+  height: 150px;
+  width: 155px;
+  border-radius: 50%;
+  transition: 0.3s all ease-in-out;
+}
+
+.teacher-img p{
+    font-weight: 600;
+    margin-top: 60px;
+}
+
+.teacher img:hover, .teacher-slide img:hover {
+  transform: scale(1.2);
+}
+
+.teachers-div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.teachers-div::after {
+  content: "";
+  flex: auto;
+}
+
+.no-photo{
+  height: 150px;
+  width: 155px;
+  border-radius: 50%;
+}
+
+.teacher{
+    min-width: 200px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.teacher-name, .teacher-subject, .teacher-country{
+    text-align: center;
+}
+
+.stat-table{
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.teacher .teacher-name, .teacher .teacher-subject, .teacher .teacher-country{
+    padding-left: 25px;
+}
+
+.teacher-name{
+    font-weight: 600;
+}
+
+.teacher-subject{
+    color: dimgray;
+    font-size: 14px;
+}
+
+.teacher-country{
+    font-size: 15px;
+}
+
+/* stats */
+.hidden {
+  display: none;
+}
+
+.pagination-container {
+  width: calc(100% - 2rem);
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  padding: 1rem 0;
+  justify-content: center;
+}
+
+.pagination-number,
+.pagination-button{
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: .2rem;
+}
+
+.pagination-number:hover{
+  background: #ce625d;
+}
+    
+.pagination-button:hover{
+    color: #ce625d;
+    background-color: transparent;
+}
+
+.pagination-number.active {
+  color: #fff;
+  background: #f77361;
+}
+
+.stat-table{
+    margin-top: 10px;
+}
+
+.stat-table thead{
+    font-size: 18px;
+    height: 40px;
+}
+
+.stat-table thead tr{
+  border-bottom: 1px solid black;
+}
+
+.stat-table thead th:hover{
+  border-bottom: 3px solid black;
+    background-color: #f2f2f2;
+}
+
+.stat-table td{
+    padding: 10px 0px 10px 0px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* favorites slideshow */
+
+.slideshow-container {
+    box-sizing:border-box;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+    padding: 0px 30px 0px 30px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  color: rgba(0,0,0,0.5);
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.teachers-slide-div, .inner-div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.inner-div{
+    width: 50%;
+}
+
+hr{
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+/* text */
+.text-div{
+    font-size: 14px;
+}
+
+/* footer */
+footer{
+    margin-top: 30px;
+    margin-left: -15px;
+}
+
+/* add teacher popup */
+#contact { 
+  margin: 4em auto;
+  width: 100px; 
+  height: 30px; 
+  line-height: 30px;
+  background: teal;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#contact:hover { background: #666; }
+#contact:active { background: #444; }
+
+#myForm, #info { 
+  display: none;
+  width: 500px;
+  height: 670px;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  box-shadow: 0px 0px 5px 5px #4d4d4d;
+}
+
+#myForm form{ 
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #4d4d4d;
+}
+
+#myForm form > div > label{ 
+    display: block;
+    margin-bottom: 5px;
+}
+
+#myForm form > div{ 
+    margin-top: 15px;
+}
+
+#myForm input, #myForm textarea, #myForm select{ 
+    border: 1px solid #4d4d4d;
+    color: #4d4d4d;
+}
+
+#myForm input[type="radio"]{
+    width: 20%;
+}
+
+#myForm form > div > input, #myForm textarea{ 
+    width: 100%;
+    padding: 5px;
+}
+
+#myForm form > div > select{
+    width: 103%;
+    padding: 5px;
+}
+
+.popupHeader{
+    background-color: #4d4d4d;
+    border: 1px solid #363535;
+    height: 50px;
+    color: white;
+}
+
+.popupHeader h1{
+    margin: 0;
+    padding: 10px;
+}
+
+.closeButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    color: white;
+}
+
+.closeButton:hover{
+    color: lightgrey;
+    background-color: transparent;
+}
+
+#myForm textarea { 
+    height: 80px; 
+    resize: none; 
+}
+
+.formBtn{ 
+  width: 140px;
+  display: inline-block;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+}
+
+.bg{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.two-in-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.two-in-row div{
+    width: 45%;
+    text-align: center;
+    margin: 5px 0 5px 0;
+}
+
+.two-in-row label{
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 5px;
+    display: block;
+}
+
+.two-in-row input{
+    width: 180px;
+    padding: 5px;
+}
+
+.two-in-row select{
+    width: 192px;
+    padding: 5px;
+}
+
+.sex{
+    display: inline-block;
+    width: 85px;
+}
+
+.sex-label{
+    display: inline !important;
+    margin-right: 10px;
+}
+
+#myForm label[for="bcolor"]{
+    display: inline;
+}
+
+#myForm input[type="color"]{
+    display: inline;
+    width: 50px;
+    margin-left: 10px;
+}
+
+#formBtn{
+    color: #f77361 !important;
+    background-color: transparent;
+    border: 2px solid #f77361 !important;
+    margin: 12px 0 0 0px;
+    width: 103%;
+    height: 35px;
+}
+
+#formBtn:hover{
+    color: white !important;
+    background-color: #ce625d;
+}
+
+#info{
+  width: 600px;
+  height: 470px;
+}
+
+/* teacher info popup */
+.inner-info{
+    padding: 20px;
+}
+
+.info-aside{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.inner-info img{
+    width: 210px;
+}
+
+.inner-info h2{
+    text-align: left;
+    margin: 0;
+}
+
+.inner-info a{
+    color: cadetblue;
+    text-decoration: none;
+}
+
+.inner-info button{
+    border: none;
+    background-color: transparent;
+    color: cadetblue;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.inner-info iframe{
+    border: none;
+    margin-top: 12px;
+    height: 220px;
+    width: 562px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile */
+@media only screen and (max-device-width: 481px){
+    body{
+        padding: 0;
+    }
+    
+    header{
+        width: 100%;
+        display: block;
+    }
+    
+    header img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .search-form{
+        margin-top: 20px;
+    }
+    
+    .search-form input{
+        width: 80%;
+        height: 50px;
+    }
+    
+    .search-form input{
+        padding-top: 15px;
+        width: 80%;
+        height: 60px;
+    }
+    
+    input[type="search"]::placeholder {
+      font-size: 30px;
+      color: gray;
+    }
+    
+    .search-form button{
+        width: 20%;
+        font-size: 30px;
+    }
+    
+    ul{
+        display: flex;
+        font-size: 30px;
+    }
+    
+    li:last-child{
+        margin-left: 13px;
+        align-self: center;
+    }
+    
+    li button{
+        font-size: 24px;
+        align-self: flex-end;
+    }
+    
+    .top-teach-params-form{
+        font-size: 40px;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-content: space-around;
+        height: 200px;
+    }
+    
+    
+    .top-teach-params-form select{
+        font-size: 30px;
+    }
+    
+    input[type="checkbox"]{
+        height: 35px;
+        width: 35px;
+    }
+    
+    .top-teach-params{
+        margin-bottom: 15px;
+    }
+    
+    /* top teachers */
+    .teacher{
+        display: block;
+        width: 50%;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .teacher p{
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+    
+    .teacher-img{
+        border: 8px solid #f77361;
+        height: 300px;
+        width: 300px;
+    }
+    
+    .teacher-img img{
+        height: 300px;
+        width: 310px;
+    }
+    
+    .teacher-slide p, .next, .prev{
+        font-size: 32px;
+    }
+    
+    .next{
+        height: 30px;
+    }
+    
+    #myForm, #info{
+        height: 80vh !important;
+        width: 85vw;
+        font-size: 42px;
+    }
+    
+    #myForm label{
+        text-align: center;
+    }
+    
+    #myForm input, select{
+        font-size: 42px;
+    }
+    
+    #myForm > form > div{
+        margin-bottom: 30px;
+    }
+    
+    input[type="radio"]{
+        height: 35px;
+    }
+    
+    .sex{
+        display: inline;
+    }
+    
+    input[type="color"]{
+        height: 45px;
+        width: 75px !important;
+    }
+    
+    .two-in-row div, .two-in-row input, .two-in-row select{
+        width: 100%;
+    }
+    
+    .popupHeader{
+        height: 90px;
+    }
+    
+    #myForm textarea{
+        height: 250px;
+    }
+    
+    #formBtn{
+        height: 70px;
+    }
+    
+    /* techer info popup */
+    #info img{
+        display: block;
+        margin: auto;
+        height: 400px;
+        width: 400px;
+    }
+    
+    .info-aside{
+        display: block;
+        text-align: center;
+    }
+    
+    .info-aside h2{
+        text-align: center;
+    }
+    
+    .info-aside p{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .inner-info > p{
+        font-size: 36px;
+        text-align: justify;
+    }
+    
+    #info .inner-info button{
+        display: none;
+    }
+    
+     #info iframe{
+        display: block !important;
+        height: 300px;
+         width: 100%;
+    }
+    
+    table, thead th{
+        font-size: 32px;
+    }
+    
+    .pagination-number, .pagination-button{
+        font-size: 32px;
+    }
+    
+    .no-photo p{
+        font-size: 60px;
+        margin-top: 40%;
+        margin-left: 5%;
+    }
+}
+
