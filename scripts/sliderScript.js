@@ -1,6 +1,10 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
+window.plusSlides = plusSlides;
+window.currentSlide = currentSlide;
+window.showSlides = showSlides;
+
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -19,5 +23,5 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].style.display = "flex";
 }

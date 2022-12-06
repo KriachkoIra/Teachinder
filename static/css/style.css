@@ -298,11 +298,6 @@ tr:nth-child(even) {
   margin: auto;
 }
 
-.mySlides {
-  display: none;
-    padding: 0px 30px 0px 30px;
-}
-
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -562,6 +557,7 @@ footer{
 
 .inner-info img{
     width: 210px;
+    height: 210px;
 }
 
 .inner-info h2{
@@ -589,9 +585,18 @@ footer{
     width: 562px;
 }
 
+#popupFav{
+    display: inline-block; 
+    position: absolute;
+    margin-left: auto; 
+    margin-right: 0;
+    font-size: 30px;
+    margin-left: 50px;
+}
 
-
-
+.mySlides{
+    width: 100%;
+}
 
 
 
@@ -710,6 +715,7 @@ footer{
     
     .next{
         height: 30px;
+        margin-left: 80px;
     }
     
     #myForm, #info{
