@@ -9,10 +9,10 @@
     <body>
     <header>
         <img src="img/teachinder2.png" width="270px" height="40px">
-        <form class="search-form">
-          <input type="search" placeholder="Name, note or age to search">
-          <button type="submit" class="search-button">Search</button>
-        </form>
+        <div class="search-form">
+          <input type="search" placeholder="Name, note or age to search" id="searchData">
+          <button class="search-button" onclick="findTeachers()">Search</button>
+        </div>
     </header>
         
     <!-- ------------ navigation --------------------->      
@@ -30,6 +30,13 @@
     <hr>
     
     <main>
+        
+    <!-- ------------ Search results --------------------->
+    <div id="search-teachers-outer">
+        <h2 style="text-align: center">Search results</h2>
+        <div class="teachers-div" id="search-teachers"></div>
+    </div>
+        
     <!-- ------------ top teachers --------------------->      
         
     <div class="top-teachers" id="top-teachers">
@@ -274,6 +281,8 @@
     </ul>       
         
 </footer>
+        
+<script type="module" src="scripts/findTeachers.js"></script>
 
 </body>
     

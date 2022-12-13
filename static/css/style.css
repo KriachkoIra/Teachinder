@@ -154,7 +154,7 @@ h2{
     color: #ce625d;
 }
 
-.teacher img, .teacher-slide img {
+.teacher img, .teacher-slide img, .teacher-search img {
   height: 150px;
   width: 155px;
   border-radius: 50%;
@@ -166,7 +166,7 @@ h2{
     margin-top: 60px;
 }
 
-.teacher img:hover, .teacher-slide img:hover {
+.teacher img:hover, .teacher-slide img:hover, .teacher-search img:hover {
   transform: scale(1.2);
 }
 
@@ -188,7 +188,7 @@ h2{
   border-radius: 50%;
 }
 
-.teacher{
+.teacher, .teacher-search{
     min-width: 200px;
     align-content: center;
     align-items: center;
