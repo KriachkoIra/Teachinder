@@ -1,11 +1,11 @@
-const paginationNumbers = document.getElementById("pagination-numbers");
-const paginatedList = document.getElementById("paginated-list");
-const listItems = paginatedList.querySelectorAll("tr");
-const nextButton = document.getElementById("next-button");
-const prevButton = document.getElementById("prev-button");
+var paginationNumbers = document.getElementById("pagination-numbers");
+var paginatedList = document.getElementById("paginated-list");
+var listItems = paginatedList.querySelectorAll("tr");
+var nextButton = document.getElementById("next-button");
+var prevButton = document.getElementById("prev-button");
 
-const paginationLimit = 6;
-const pageCount = Math.ceil(listItems.length / paginationLimit);
+var paginationLimit = 10;
+var pageCount = Math.ceil(listItems.length / paginationLimit);
 let currentPage = 1;
 
 const disableButton = (button) => {
@@ -75,7 +75,16 @@ const setCurrentPage = (pageNum) => {
   });
 };
 
-window.addEventListener("load", () => {
+function displayTable() {
+  paginationNumbers = document.getElementById("pagination-numbers");
+  paginatedList = document.getElementById("paginated-list");
+  listItems = paginatedList.querySelectorAll("tr");
+  nextButton = document.getElementById("next-button");
+  prevButton = document.getElementById("prev-button");
+  paginationLimit = 6;
+  pageCount = Math.ceil(listItems.length / paginationLimit);
+  currentPage = 1;
+    
   getPaginationNumbers();
   setCurrentPage(1);
 
@@ -96,4 +105,4 @@ window.addEventListener("load", () => {
       });
     }
   });
-});
+}
