@@ -46,3 +46,19 @@ for (let i = 0; i < teachers.length; i++) {
     element.appendChild(tdiv);
 
 }
+
+// add options to countries select
+let select = document.getElementById('teacher-country');
+let countries = [];
+
+for (let i = 0; i < teachers.length; i++) {
+    if(!countries.includes(teachers[i].country))
+        countries.push(teachers[i].country);
+}
+
+for (let i = 0; i < countries.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = countries[i];
+    opt.innerHTML = countries[i];
+    select.appendChild(opt);
+}

@@ -40,42 +40,37 @@
         
     <div class="top-teach-params age-param">
         <label for="teacher-age">Age</label>
-        <select id="teacher-age" name="teacher-age">
-            <option value="18-31">18-31</option>
-            <option value="31-45">31-45</option>
-            <option value="45+">45+</option>
+        <select id="teacher-age" name="teacher-age" onchange="filterTeachers()">
+            <option value="18-99">all</option>
+            <option value="18-35">18-35</option>
+            <option value="35-50">35-50</option>
+            <option value="50-99">50+</option>
         </select>
     </div>    
         
-    <div class="top-teach-params region-param">
-        <label for="teacher-region">Region</label>
-            <select id="teacher-region" name="teacher-region">
-            <option value="europe">Europe</option>
-            <option value="asia">Asia</option>
-            <option value="north-am">North America</option>
-                <option value="central-am">Central America</option>
-                <option value="south-am">South America</option>
-                <option value="africa">Africa</option>
-                <option value="oceania">Oceania</option>
+    <div class="top-teach-params country-param">
+        <label for="teacher-region">Country</label>
+        <select id="teacher-country" name="teacher-country" onchange="filterTeachers()">
+            <option value="all">all</option>
         </select>
     </div>
         
-    <div class="top-teach-params sex-param">
-        <label for="teacher-sex">Sex</label>
-            <select id="teacher-sex" name="teacher-sex">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
+    <div class="top-teach-params gender-param">
+        <label for="teacher-sex">Gender</label>
+            <select id="teacher-gender" name="teacher-gender" onchange="filterTeachers()">
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
     </div> 
         
     <div class="top-teach-params photo-param">
-        <input type="checkbox" id="teacher-photo" name="teacher-photo" value="photoRequired">
+        <input type="checkbox" id="teacher-photo" name="teacher-photo" value="photoRequired" onchange="filterTeachers()">
         <label for="teacher-photo">Only with photo</label><br>   
     </div>  
         
     <div class="top-teach-params favorites-param">
-        <input type="checkbox" id="teacher-fav" name="teacher-fav" value="favRequired">
+        <input type="checkbox" id="teacher-fav" name="teacher-fav" value="favRequired" onchange="filterTeachers()">
         <label for="teacher-fav">Only favorites</label><br>   
     </div>
         
@@ -88,6 +83,7 @@
     <script type="module" src="scripts/prepareData.js"></script>
     <script type="module" src="scripts/teacherInfo.js"></script>
     <script type="module" src="scripts/displayTopTeachers.js"></script> 
+    <script type="module" src="scripts/filterTeachers.js"></script> 
         
     </div>   
         
