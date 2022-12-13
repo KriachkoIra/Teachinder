@@ -63,7 +63,7 @@ function loadTeachers() {
         person.bgcolor = "#" + Math.floor(Math.random()*16777215).toString(16); // random bgcolor
         else person.bgcolor = additionalUsers[i].bgcolor;
         
-        if(additionalUsers[i].course == null)
+        if(additionalUsers[i].note == null)
         person.note = "No notes yet."; // note
         else person.note = additionalUsers[i].note;
         

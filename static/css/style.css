@@ -392,18 +392,18 @@ footer{
   box-shadow: 0px 0px 5px 5px #4d4d4d;
 }
 
-#myForm form{ 
+#myForm > div{ 
     padding-left: 50px;
     padding-right: 50px;
     color: #4d4d4d;
 }
 
-#myForm form > div > label{ 
+#myForm > div > div > label{ 
     display: block;
     margin-bottom: 5px;
 }
 
-#myForm form > div{ 
+#myForm > div > div{ 
     margin-top: 15px;
 }
 
@@ -416,12 +416,12 @@ footer{
     width: 20%;
 }
 
-#myForm form > div > input, #myForm textarea{ 
+#myForm > div > div > input, #myForm textarea{ 
     width: 100%;
     padding: 5px;
 }
 
-#myForm form > div > select{
+#myForm > div > div > select{
     width: 103%;
     padding: 5px;
 }

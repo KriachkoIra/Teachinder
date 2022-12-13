@@ -32,7 +32,7 @@
     <main>
         
     <!-- ------------ Search results --------------------->
-    <div id="search-teachers-outer">
+    <div id="search-teachers-outer" style="display: none">
         <h2 style="text-align: center">Search results</h2>
         <div class="teachers-div" id="search-teachers"></div>
     </div>
@@ -160,7 +160,7 @@
   <button onclick="closeForm()" class="closeButton">X</button>
   <div class="popupHeader"><h1>Add Teacher</h1></div>
   
-  <form action="#">
+  <div>
       <div>
         <label for="fname">Name</label>
         <input type="text" id="fname" name="fname" placeholder="Enter name" required>
@@ -168,28 +168,29 @@
       
       <div>
         <label for="teacher-speciality">Speciality</label>
-        <select id="teacher-speciality" name="teacher-speciality" required>
-            <option value="maths">Mathematics</option>
-            <option value="soft">Software Engineering</option>
-            <option value="biology">Biology</option>
-            <option value="chemistry">Chemistry</option>
-            <option value="history">History</option>
-            <option value="english">English</option>
-            <option value="chess">Chess</option>
+        <select id="tspeciality" name="tspeciality" required>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Biology">Biology</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="History">History</option>
+            <option value="English">English</option>
+            <option value="Chess">Chess</option>
+            <option value="Art">Art</option>
         </select>
       </div>
       
       <div class="two-in-row">
         <div>
             <label for="teacher-country">Country</label>
-            <select id="teacher-country" name="teacher-country" required>
-                <option value="ukraine">Ukraine</option>
-                <option value="usa">USA</option>
-                <option value="germany">Germany</option>
-                <option value="china">China</option>
-                <option value="england">England</option>
-                <option value="poland">Poland</option>
-                <option value="france">France</option>
+            <select id="tcountry" name="tcountry" required>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United States">USA</option>
+                <option value="Germany">Germany</option>
+                <option value="China">China</option>
+                <option value="England">England</option>
+                <option value="Poland">Poland</option>
+                <option value="France">France</option>
             </select>
         </div>
         <div>
@@ -212,7 +213,7 @@
       </div>
       
       <div>
-        <label for="sex" class="sex-label">Sex</label>
+        <label for="sex" class="sex-label">Gender</label>
         <div class="sex">
         <input type="radio" id="sex" name="sex" value="male" required>
         <label for="male">Male</label>
@@ -233,10 +234,11 @@
           <textarea id="comment" name="comment"></textarea>
       </div>
       
-    <input class="formBtn" id="formBtn" type="submit" value="Add"/>
-  </form>
+    <button class="formBtn" id="formBtn" onclick="addTeacher()">Add</button>
+  </div>
 </div>      
-<script src="scripts/popup.js"></script>        
+<script src="scripts/popup.js"></script>
+<script type="module" src="scripts/addTeacher.js"></script>
 </section>
         
         
