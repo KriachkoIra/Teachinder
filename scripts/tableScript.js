@@ -1,11 +1,11 @@
-var paginationNumbers = document.getElementById("pagination-numbers");
-var paginatedList = document.getElementById("paginated-list");
-var listItems = paginatedList.querySelectorAll("tr");
-var nextButton = document.getElementById("next-button");
-var prevButton = document.getElementById("prev-button");
+var paginationNumbers;
+var paginatedList;
+var listItems;
+var nextButton;
+var prevButton;
 
 var paginationLimit = 10;
-var pageCount = Math.ceil(listItems.length / paginationLimit);
+var pageCount;
 let currentPage = 1;
 
 const disableButton = (button) => {
@@ -67,6 +67,8 @@ const setCurrentPage = (pageNum) => {
   const prevRange = (pageNum - 1) * paginationLimit;
   const currRange = pageNum * paginationLimit;
 
+  listItems = paginatedList.querySelectorAll("tr");
+    
   listItems.forEach((item, index) => {
     item.classList.add("hidden");
     if (index >= prevRange && index < currRange) {

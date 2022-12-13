@@ -92,11 +92,11 @@
     <table width="400px" height="200px" class="stat-table">
         <thead>
         <tr>
-            <th style="width:25%">Name</th>
-            <th style="width:20%">Speciality</th>
-            <th style="width:15%">Age</th>
+            <th id="statName" style="width:25%" onclick="sortTeachers(this.id)">Name</th>
+            <th id="statSpeciality" style="width:20%" onclick="sortTeachers(this.id)">Speciality</th>
+            <th id="statAge" style="width:15%" onclick="sortTeachers(this.id)">Age</th>
             <th style="width:20%">Gender</th>
-            <th style="width:20%">Nationality</th>
+            <th id="statNationality" style="width:20%" onclick="sortTeachers(this.id)">Nationality</th>
             </tr>
         </thead>
         <tbody id="paginated-list" data-current-page="1" aria-live="polite">
@@ -120,6 +120,7 @@
         
         <script type="module" src="scripts/displayTopTeachers.js"></script> 
     <script type="module" src="scripts/filterTeachers.js"></script>
+        <script type="module" src="scripts/sortTeachers.js"></script>
         <script src="scripts/tableScript.js"></script>
     <!------------------- Favorites ----------------->
     
