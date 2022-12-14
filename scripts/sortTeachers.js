@@ -8,23 +8,24 @@ var nameSorted = false, nationSorted = false, ageSorted = false, specSorted = fa
 function sortTeachers(parameter){
     let teachersCopy = [...teachers];
     
-    if(parameter == "statName")
-        teachersCopy.sort(function(a, b){return a.full_name.localeCompare(b.full_name)});
-    else if(parameter == "statNationality")
-        teachersCopy.sort(function(a, b){return a.country.localeCompare(b.country)});
-    else if(parameter == "statAge")
-        teachersCopy.sort(function(a, b){
-            if(a.age == null) return 1;
-            if(b.age == null) return -1;
-            return a.age - b.age});
-    else if(parameter == "statSpeciality") 
-        teachersCopy.sort(function(a, b){return a.course.localeCompare(b.course)});
-    
+    let descending = 1;
     if((parameter == "statName" && nameSorted) ||
       (parameter == "statNationality" && nationSorted) ||
       (parameter == "statAge" && ageSorted) ||
-      (parameter == "statSpeciality") && specSorted) // reverse if the order should be descending
-       teachersCopy.reverse();
+      (parameter == "statSpeciality") && specSorted)
+        descending = -1;
+    
+    if(parameter == "statName")
+        teachersCopy.sort(function(a, b){return descending * a.full_name.localeCompare(b.full_name)});
+    else if(parameter == "statNationality")
+        teachersCopy.sort(function(a, b){return descending * a.country.localeCompare(b.country)});
+    else if(parameter == "statAge")
+        teachersCopy.sort(function(a, b){
+            if(a.age == null) return descending * 1;
+            if(b.age == null) return descending * (-1);
+            return descending * (a.age - b.age)});
+    else if(parameter == "statSpeciality") 
+        teachersCopy.sort(function(a, b){return descending * a.course.localeCompare(b.course)});
     
     if(parameter == "statName") nameSorted = !nameSorted;
     else if(parameter == "statNationality") nationSorted = !nationSorted;

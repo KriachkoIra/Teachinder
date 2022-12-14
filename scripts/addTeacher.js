@@ -21,14 +21,14 @@ function addTeacher(){
     let note = document.getElementById("comment").value;
     
     let check = teachers.find(pers => pers.full_name == name); // check if person exists
-    if(typeof check != 'undefined'){
+    if(!check){
         alert("Person already exists. " + name);
         return;
     }
     
     let person = {};
     
-    if(note == null || note == "" || ty)
+    if(!note || note == "")
         person.note = "No notes yet."; // note
     else person.note = note;
         
@@ -56,7 +56,7 @@ function addTeacher(){
     
     // photo
     let photodiv = document.createElement("div");
-    if(person.picture_large == null){
+    if(!person.picture_large){
         photodiv.className = "teacher-img  no-photo";
         let tphoto = document.createElement("p");
         let words = person.full_name.split(" ");

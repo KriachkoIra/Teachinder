@@ -12,7 +12,7 @@ for (let i = 0; i < teachers.length + 1; i++) {
             element.appendChild(fourdiv);
         } break;
     }
-    if(teachers[i].favorite == false) continue;
+    if(!teachers[i].favorite) continue;
     
     let tdiv = document.createElement("div"); 
     tdiv.className = "teacher-slide";

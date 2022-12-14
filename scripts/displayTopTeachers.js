@@ -10,7 +10,7 @@ for (let i = 0; i < teachers.length; i++) {
     
     // photo
     let photodiv = document.createElement("div");
-    if(teachers[i].picture_large == null){
+    if(!teachers[i].picture_large){
         photodiv.className = "teacher-img  no-photo";
         let tphoto = document.createElement("p");
         let words = teachers[i].full_name.split(" ");

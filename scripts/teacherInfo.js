@@ -5,8 +5,8 @@ window.closeInfo = closeInfo;
 window.addToFav = addToFav;
 
 function openInfo(n) {
-    if(teachers[n].picture_large != null) document.getElementById("popupPhoto").src = teachers[n].picture_large;
-    else if(teachers[n].picture_large == null && teachers[n].gender == "female"){ 
+    if(teachers[n].picture_large) document.getElementById("popupPhoto").src = teachers[n].picture_large;
+    else if(!teachers[n].picture_large && teachers[n].gender == "female"){ 
         document.getElementById("popupPhoto").src = "img/femaleTeacher.png";
         document.getElementById("popupPhoto").style.height = "170px";
         document.getElementById("popupPhoto").style.width = "170px";
@@ -34,7 +34,7 @@ function openInfo(n) {
 
 function addToFav(n){
     teachers[n].favorite = !teachers[n].favorite;
-    if(teachers[n].favorite == true) document.getElementById("popupFav").innerHTML = "&#09 &#9733;";
+    if(teachers[n].favorite) document.getElementById("popupFav").innerHTML = "&#09 &#9733;";
     else document.getElementById("popupFav").innerHTML = "&#09 &#9734;";
 }
 

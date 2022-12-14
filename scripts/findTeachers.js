@@ -13,7 +13,7 @@ function findTeachers(){
         child = element.lastElementChild;
     }
     
-    if(data == null || data == ""){ 
+    if(!data || data == ""){ 
         document.getElementById("search-teachers-outer").style.display = "none";
         return;
     }
@@ -30,7 +30,7 @@ function findTeachers(){
 
         // photo
         let photodiv = document.createElement("div");
-        if(teachers[i].picture_large == null){
+        if(!teachers[i].picture_large){
             photodiv.className = "teacher-img  no-photo";
             let tphoto = document.createElement("p");
             tphoto.innerHTML = words[0][0] + "." + words[1][0] + ".";
@@ -65,7 +65,7 @@ function findTeachers(){
         element.appendChild(tdiv);
     }
     
-    if(element.lastElementChild == null){
+    if(!element.lastElementChild){
         let p = document.createElement("p");
         p.innerHTML = "No results.";
         element.appendChild(p);

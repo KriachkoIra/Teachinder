@@ -44,26 +44,26 @@ function loadTeachers() {
     // add additional users
     for (let i = 0; i < additionalUsers.length; i++) {
         let check = people.find(pers => pers.full_name == additionalUsers[i].full_name); // check if person exists
-        if(typeof check != 'undefined'){
+        if(!check){
             console.log("Person already exists. " + additionalUsers[i].full_name);
             continue;
         } 
         
         let person = {};
         person.id = people.length; // id
-        if(additionalUsers[i].favorite == null)
+        if(!additionalUsers[i].favorite)
             person.favorite = Math.random() < 0.5; // add favorite - random boolean
         else person.favorite = additionalUsers[i].favorite;
         
-        if(additionalUsers[i].course == null)
+        if(!additionalUsers[i].course)
             person.course = courses[Math.floor(Math.random() * 12)]; // random course from the array
         else person.course = additionalUsers[i].course;
         
-        if(additionalUsers[i].bgcolor == null)
+        if(!additionalUsers[i].bgcolor)
         person.bgcolor = "#" + Math.floor(Math.random()*16777215).toString(16); // random bgcolor
         else person.bgcolor = additionalUsers[i].bgcolor;
         
-        if(additionalUsers[i].note == null)
+        if(!additionalUsers[i].note)
         person.note = "No notes yet."; // note
         else person.note = additionalUsers[i].note;
         
