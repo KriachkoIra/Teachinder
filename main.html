@@ -79,16 +79,16 @@
     
         
     <!-------------------- list of teachers --------------->
-        
-    <div class="teachers-div" id="teachers-div">
-    <p style="display: none" id="no-results">No results.</p>    
+     <p style="display: none" id="no-results">No results.</p>   
+    <div  id="teachers-div">    
     </div>
     <script src="scripts/renewData.js"></script>
     <script type="module" src="scripts/prepareData.js"></script>
     <script type="module" src="scripts/teacherInfo.js"></script>
         
     </div> 
-        
+     
+    <button class="search-button showMore" id="showMore" onclick="showMore()">Show 10 more</button>
     <button class="search-button stopSearch" id="stopSearch" onclick="stopFindTeachers()" style="display: none">Stop Search</button>
         
     <!------------------- Statistics ----------------->

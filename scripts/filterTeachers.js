@@ -4,8 +4,8 @@ window.filterTeachers = filterTeachers;
 
 function filterTeachers() {
     let tlist = document.getElementsByClassName("teacher");
-    for(let i = 0; i < tlist.length; i++)
-        tlist[i].style.display = "block";
+    displayTeachers(teachers);
+    document.getElementById("showMore").style.display = "block";
     
     let tage = document.getElementById("teacher-age");
     let age1 = parseInt(tage.value[0] + tage.value[1]), age2 = parseInt(tage.value[3] + tage.value[4]);
@@ -14,7 +14,14 @@ function filterTeachers() {
     let tphoto = document.getElementById("teacher-photo");
     let tfav = document.getElementById("teacher-fav");
     
-    let newTeachers = [];
+    let newTeachers = [], cnt = 0;
+    let spans = document.querySelectorAll("span");
+    for(let i = 0; i < spans.length; i++){
+        if(spans[i].style.display != "none")
+            cnt++;
+    }
+    
+    let isFilter = false;
     
     for(let i = 0; i < tlist.length; i++){
         let tid = parseInt(tlist[i].id);
@@ -23,9 +30,11 @@ function filterTeachers() {
            (tgender.value != "all" && teachers[tid].gender != tgender.value) ||
            (tphoto.checked && teachers[tid].picture_large == null) ||
            (tfav.checked && teachers[tid].favorite == false))
-            tlist[i].style.display = "none";
-        else newTeachers.push(teachers[i]);
+            isFilter = true;
+        else 
+            newTeachers.push(teachers[i]);
     }
     
+    displayTeachers(newTeachers);
     renewStats(newTeachers);
 }

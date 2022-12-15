@@ -598,14 +598,12 @@ footer{
     width: 100%;
 }
 
-.stopSearch{
+.stopSearch, .showMore{
     margin-left: 45%;
     padding: 10px;
     font-weight: 600;
     border: 2px solid;
 }
-
-
 
 
 

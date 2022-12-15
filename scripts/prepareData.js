@@ -5,9 +5,9 @@ var txt = "";
 var xhttp = new XMLHttpRequest();
 var randomUserMock = {};
 
-export const teachers = loadTeachers();
-//teachers.forEach(func1);
-//document.getElementById("test").innerHTML = txt;
+export var teachers = [];
+loadTeachers(50);
+window.loadTeachers = loadTeachers;
 
 function httpGet(n){
     return new Promise(function(resolve, reject){
@@ -39,8 +39,8 @@ function getTeachers(n) {
     randomUserMock = JSON.parse(xhttp.response).results;
 }
 
-function loadTeachers() {
-    getTeachers(50);
+function loadTeachers(n) {
+    getTeachers(n);
     let people = [];
     let courses = ["Mathematics", "Physics", "English", "Computer Science", "Dancing", "Chess", "Biology", "Chemistry", "Law", "Art", "Medicine", "Statistics"];
     
@@ -70,5 +70,5 @@ function loadTeachers() {
         people.push(person); // add a created person to the array
     }
     
-    return people;
+    teachers = teachers.concat(people);
 }

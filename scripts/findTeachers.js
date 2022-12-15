@@ -4,6 +4,7 @@ window.findTeachers = findTeachers;
 window.stopFindTeachers = stopFindTeachers;
 
 function findTeachers(){
+    document.getElementById("showMore").style.display = "block";
     let data = document.getElementById("searchData").value;
     let p = document.getElementById("no-results");
     p.style.display = "none";
@@ -15,7 +16,7 @@ function findTeachers(){
     document.getElementById("stopSearch").style.display = "none";
     
     if(!data || data == ""){ 
-        document.getElementById("search-teachers-outer").style.display = "none";
+        displayTeachers(teachers);
         renewStats(teachers);
         return;
     }
@@ -29,30 +30,29 @@ function findTeachers(){
     
     let newTeachers = [];
     
-    for(let i = 0; i < tlist.length; i++){
-        let tid = parseInt(tlist[i].id);
-        let words = teachers[tid].full_name.split(" ");
-        if(teachers[tid].full_name != data && teachers[tid].age != data && teachers[tid].note != data &&
+    for(let i = 0; i < teachers.length; i++){
+        let words = teachers[i].full_name.split(" ");
+        if(teachers[i].full_name != data && teachers[i].age != data && teachers[i].note != data &&
           words[0] != data && words[1] != data)
-            tlist[tid].style.display = "none";
-        else newTeachers.push(teachers[tid]);
+            continue;
+        else newTeachers.push(teachers[i]);
     }
     
     renewStats(newTeachers);
+    displayTeachers(newTeachers);
     
     if(newTeachers.length == 0)
         p.style.display = "block";
     
     document.getElementById("stopSearch").style.display = "block";
+    document.getElementById("showMore").style.display = "none";
 }
 
 function stopFindTeachers(){
     document.getElementById("searchData").value = null;
     document.getElementById("stopSearch").style.display = "none";
+    document.getElementById("showMore").style.display = "block";
     
-    let tlist = document.getElementsByClassName("teacher");
-    for(let i = 0; i < tlist.length; i++)
-        tlist[i].style.display = "block";
-    
+    displayTeachers(teachers);
     renewStats(teachers);
 }

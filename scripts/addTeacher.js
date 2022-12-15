@@ -45,79 +45,9 @@ function addTeacher(){
     person.picture_large = null;
     person.favorite = false;
     
-    teachers.push(person);
-    
-    let element = document.getElementById("teachers-div");
-
-    let tdiv = document.createElement("div");
-    tdiv.className = "teacher";
-    tdiv.id = teachers.length - 1;
-    tdiv.setAttribute('onClick', "openInfo(this.id)");
-    
-    // photo
-    let photodiv = document.createElement("div");
-    if(!person.picture_large){
-        photodiv.className = "teacher-img  no-photo";
-        let tphoto = document.createElement("p");
-        let words = person.full_name.split(" ");
-        if(words.length > 1)
-            tphoto.innerHTML = words[0][0] + "." + words[1][0] + ".";
-        else
-            tphoto.innerHTML = words[0][0] + ".";
-        photodiv.appendChild(tphoto);
-    } else{
-        photodiv.className = "teacher-img";
-        let timg = document.createElement('img');
-        timg.src = person.picture_large;
-        photodiv.appendChild(timg);
-    }
-    tdiv.appendChild(photodiv);
-
-
-    let innerdiv = document.createElement("div");
-    innerdiv.style = "margin-left: -30px";
-
-    // name, subject and country
-    let tname = document.createElement("p");
-    tname.innerHTML = person.full_name;
-    tname.className = "teacher-name";    
-    innerdiv.appendChild(tname);
-    let tsubject = document.createElement("p");
-    tsubject.innerHTML = person.course;
-    tsubject.className = "teacher-subject";
-    innerdiv.appendChild(tsubject);
-    let tcountry = document.createElement("p");
-    tcountry.innerHTML = person.country;
-    tcountry.className = "teacher-country";
-    innerdiv.appendChild(tcountry);
-
-    tdiv.appendChild(innerdiv);
-    element.appendChild(tdiv);
-    
-    
-    
-    // display statistics
-    element = document.getElementById("paginated-list");
-
-    let row = document.createElement("tr");
-    let node1 = document.createElement("td");
-    node1.innerHTML = person.full_name;
-    row.appendChild(node1);
-    let node2 = document.createElement("td");
-    node2.innerHTML = person.course;
-    row.appendChild(node2);
-    let node3 = document.createElement("td");
-    node3.innerHTML = person.age;
-    row.appendChild(node3);
-    let node4 = document.createElement("td");
-    node4.innerHTML = person.gender;
-    row.appendChild(node4);
-    let node5 = document.createElement("td");
-    node5.innerHTML = person.country;
-    row.appendChild(node5);
-    element.appendChild(row);
-
-    setCurrentPage(1);
+    teachers.unshift(person);
+    renewStats(teachers);
+    displayTeachers(teachers);
     
     closeForm();
 }
