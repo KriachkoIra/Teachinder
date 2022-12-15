@@ -16,12 +16,12 @@ function addTeacher(){
     let mail = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
     let bday = document.getElementById("birthday").value;
-    let gender = document.getElementById("sex").value;
+    let gender = document.querySelector('input[name="sex"]:checked').value;
     let bgcolor = document.getElementById("bcolor").value;
     let note = document.getElementById("comment").value;
     
     let check = teachers.find(pers => pers.full_name == name); // check if person exists
-    if(!check){
+    if(check){
         alert("Person already exists. " + name);
         return;
     }
