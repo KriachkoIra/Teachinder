@@ -1,75 +1,58 @@
 import { teachers } from "./prepareData.js";
 
 window.findTeachers = findTeachers;
+window.stopFindTeachers = stopFindTeachers;
 
 function findTeachers(){
-    var data = document.getElementById("searchData").value;
+    let data = document.getElementById("searchData").value;
+    let p = document.getElementById("no-results");
+    p.style.display = "none";
     
-    let element = document.getElementById("search-teachers");
+    let tlist = document.getElementsByClassName("teacher");
+    for(let i = 0; i < tlist.length; i++)
+        tlist[i].style.display = "block";
     
-    var child = element.lastElementChild; 
-    while (child) {
-        element.removeChild(child);
-        child = element.lastElementChild;
-    }
+    document.getElementById("stopSearch").style.display = "none";
     
     if(!data || data == ""){ 
         document.getElementById("search-teachers-outer").style.display = "none";
+        renewStats(teachers);
         return;
     }
     
-    for (let i = 0; i < teachers.length; i++) {
-        let words = teachers[i].full_name.split(" ");
-        if(teachers[i].full_name != data && teachers[i].age != data && teachers[i].note != data &&
-          words[0] != data && words[1] != data) continue;
-                
-        let tdiv = document.createElement("div");
-        tdiv.className = "teacher-search";
-        tdiv.id = i;
-        tdiv.setAttribute('onClick', "openInfo(this.id)");
-
-        // photo
-        let photodiv = document.createElement("div");
-        if(!teachers[i].picture_large){
-            photodiv.className = "teacher-img  no-photo";
-            let tphoto = document.createElement("p");
-            tphoto.innerHTML = words[0][0] + "." + words[1][0] + ".";
-            photodiv.appendChild(tphoto);
-        } else{
-            photodiv.className = "teacher-img";
-            let timg = document.createElement('img');
-            timg.src = teachers[i].picture_large;
-            photodiv.appendChild(timg);
-        }
-        tdiv.appendChild(photodiv);
-
-
-        let innerdiv = document.createElement("div");
-        innerdiv.style = "margin-left: -30px";
-
-        // name, subject and country
-        let tname = document.createElement("p");
-        tname.innerHTML = teachers[i].full_name;
-        tname.className = "teacher-name";    
-        innerdiv.appendChild(tname);
-        let tsubject = document.createElement("p");
-        tsubject.innerHTML = teachers[i].course;
-        tsubject.className = "teacher-subject";
-        innerdiv.appendChild(tsubject);
-        let tcountry = document.createElement("p");
-        tcountry.innerHTML = teachers[i].country;
-        tcountry.className = "teacher-country";
-        innerdiv.appendChild(tcountry);
-
-        tdiv.appendChild(innerdiv);
-        element.appendChild(tdiv);
+    let tage = document.getElementById("teacher-age");
+    let age1 = parseInt(tage.value[0] + tage.value[1]), age2 = parseInt(tage.value[3] + tage.value[4]);
+    let tcountry = document.getElementById("teacher-country");
+    let tgender = document.getElementById("teacher-gender");
+    let tphoto = document.getElementById("teacher-photo");
+    let tfav = document.getElementById("teacher-fav");
+    
+    let newTeachers = [];
+    
+    for(let i = 0; i < tlist.length; i++){
+        let tid = parseInt(tlist[i].id);
+        let words = teachers[tid].full_name.split(" ");
+        if(teachers[tid].full_name != data && teachers[tid].age != data && teachers[tid].note != data &&
+          words[0] != data && words[1] != data)
+            tlist[tid].style.display = "none";
+        else newTeachers.push(teachers[tid]);
     }
     
-    if(!element.lastElementChild){
-        let p = document.createElement("p");
-        p.innerHTML = "No results.";
-        element.appendChild(p);
-    }
+    renewStats(newTeachers);
     
-    document.getElementById("search-teachers-outer").style.display = "block";
+    if(newTeachers.length == 0)
+        p.style.display = "block";
+    
+    document.getElementById("stopSearch").style.display = "block";
+}
+
+function stopFindTeachers(){
+    document.getElementById("searchData").value = null;
+    document.getElementById("stopSearch").style.display = "none";
+    
+    let tlist = document.getElementsByClassName("teacher");
+    for(let i = 0; i < tlist.length; i++)
+        tlist[i].style.display = "block";
+    
+    renewStats(teachers);
 }

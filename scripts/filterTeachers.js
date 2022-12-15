@@ -14,6 +14,8 @@ function filterTeachers() {
     let tphoto = document.getElementById("teacher-photo");
     let tfav = document.getElementById("teacher-fav");
     
+    let newTeachers = [];
+    
     for(let i = 0; i < tlist.length; i++){
         let tid = parseInt(tlist[i].id);
         if(teachers[tid].age < age1 || teachers[tid].age >= age2 ||
@@ -22,5 +24,8 @@ function filterTeachers() {
            (tphoto.checked && teachers[tid].picture_large == null) ||
            (tfav.checked && teachers[tid].favorite == false))
             tlist[i].style.display = "none";
+        else newTeachers.push(teachers[i]);
     }
+    
+    renewStats(newTeachers);
 }

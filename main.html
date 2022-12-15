@@ -31,14 +31,6 @@
     
     <main>
         
-    <div id="teachers-hidden" style="display: none"></div>
-        
-    <!-- ------------ Search results --------------------->
-    <div id="search-teachers-outer" style="display: none">
-        <h2 style="text-align: center">Search results</h2>
-        <div class="teachers-div" id="search-teachers"></div>
-    </div>
-        
     <!-- ------------ top teachers --------------------->      
         
     <div class="top-teachers" id="top-teachers">
@@ -88,17 +80,22 @@
         
     <!-------------------- list of teachers --------------->
         
-    <div class="teachers-div" id="teachers-div"></div>  
+    <div class="teachers-div" id="teachers-div">
+    <p style="display: none" id="no-results">No results.</p>    
+    </div>
+    <script src="scripts/renewData.js"></script>
     <script type="module" src="scripts/prepareData.js"></script>
-    <script type="module" src="scripts/teacherInfo.js"></script> 
+    <script type="module" src="scripts/teacherInfo.js"></script>
         
-    </div>   
+    </div> 
+        
+    <button class="search-button stopSearch" id="stopSearch" onclick="stopFindTeachers()" style="display: none">Stop Search</button>
         
     <!------------------- Statistics ----------------->
         
     <h2 id="statistics">Statistics</h2>
         
-    <table width="400px" height="200px" class="stat-table">
+    <table width="400px" height="200px" class="stat-table" id="stat-table">
         <thead>
         <tr>
             <th id="statName" style="width:25%" onclick="sortTeachers(this.id)">Name</th>

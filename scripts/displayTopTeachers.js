@@ -86,4 +86,4 @@ for (let i = 0; i < teachers.length; i++) {
     element.appendChild(row);
 }
 
-displayTable();
+displayTable(teachers.length);
