@@ -611,6 +611,13 @@ footer{
     margin-top: 4%;
 }
 
+#charts{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
 
 
 /* mobile */

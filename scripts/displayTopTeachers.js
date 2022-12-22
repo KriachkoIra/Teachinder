@@ -83,7 +83,7 @@ function displayTeachers(t){
 
 // add options to countries select
 let select = document.getElementById('teacher-country');
-let countries = [];
+var countries = [];
 
 for (let i = 0; i < teachers.length; i++) {
     if(!countries.includes(teachers[i].country))
@@ -121,6 +121,95 @@ for (let i = 0; i < teachers.length; i++) {
 }
 
 displayTable(teachers.length);
+
+// display charts
+
+var xValues = ["Mathematics", "Physics", "English", "Computer Science", "Dancing", "Chess", "Biology", "Chemistry", "Law", "Art", "Medicine", "Statistics"];
+var yValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+for (let i = 0; i < teachers.length; i++) {
+    if(xValues.findIndex(elem => elem == teachers[i].course) != -1)
+        yValues[xValues.findIndex(elem => elem == teachers[i].course)]++;
+}
+
+var barColors = [
+  "#3d5a80",
+  "#98c1d9",
+  "#BCDEEB",
+  "#E0FBFC",
+  "#E4D8D1",
+  "#E7B4A5",
+  "#EE6C4D",
+  "#BD5E4A",
+  "#8C4F47",
+  "#5B4144",
+  "#293241",
+  "#3C4552"
+];
+
+new Chart("chartSpeciality", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Specialities"
+    }
+  }
+});
+
+
+var xValues2 = [...countries];
+var yValues2 = new Array(xValues2.length).fill(0);
+
+var barColors2 = [
+    "#283A53",
+  "#3d5a80",
+    "#4289B3",
+  "#98c1d9",
+  "#BCDEEB",
+  "#E0FBFC",
+    "#E2EAE7",
+  "#E4D8D1",
+  "#E7B4A5",
+    "#EB9079",
+  "#EE6C4D",
+    "#A55749",
+  "#BD5E4A",
+    "#423A43",
+  "#8C4F47",
+  "#5B4144",
+  "#293241",
+  "#3C4552"
+];
+
+for (let i = 0; i < teachers.length; i++) {
+    if(xValues2.findIndex(elem => elem == teachers[i].country) != -1)
+        yValues2[xValues2.findIndex(elem => elem == teachers[i].country)]++;
+}
+
+new Chart("chartCountry", {
+  type: "pie",
+  data: {
+    labels: xValues2,
+    datasets: [{
+      backgroundColor: barColors2,
+      data: yValues2
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Countries"
+    }
+  }
+});
 
 function showMore(){
     let spans = element.querySelectorAll("span");
