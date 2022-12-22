@@ -31,6 +31,13 @@ function openInfo(n) {
     document.getElementById("info").style.display = "block";
     document.getElementById("bg").style.display = "block";
     
+    // calculate days until next birthday
+    let now = dayjs();
+    let dateB = dayjs(teachers[n].b_date);
+    dateB = dateB.add(now.year() - dateB.year() + 1, 'year');
+    let df = dateB.diff(now, "day");
+    document.getElementById("popupBDay").innerHTML = "Days until next birthday: " + df;
+    
     // setting the map
     var map = L.map('map').setView([teachers[n].coordinates.latitude, teachers[n].coordinates.longitude], 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

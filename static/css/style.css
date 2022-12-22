@@ -542,7 +542,7 @@ footer{
 
 #info{
   width: 600px;
-  height: 580px;
+  height: 600px;
 }
 
 /* teacher info popup */
@@ -556,8 +556,8 @@ footer{
 }
 
 .inner-info img{
-    width: 210px;
-    height: 210px;
+    width: 230px;
+    height: 230px;
 }
 
 .inner-info h2{
