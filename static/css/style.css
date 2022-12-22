@@ -542,7 +542,7 @@ footer{
 
 #info{
   width: 600px;
-  height: 470px;
+  height: 580px;
 }
 
 /* teacher info popup */
@@ -606,7 +606,10 @@ footer{
 }
 
 
-
+#map{
+    height: 200px;
+    margin-top: 4%;
+}
 
 
 

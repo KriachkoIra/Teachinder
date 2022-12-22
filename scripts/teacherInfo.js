@@ -30,6 +30,14 @@ function openInfo(n) {
     document.getElementById("popupNote").innerHTML = teachers[n].note;
     document.getElementById("info").style.display = "block";
     document.getElementById("bg").style.display = "block";
+    
+    // setting the map
+    var map = L.map('map').setView([teachers[n].coordinates.latitude, teachers[n].coordinates.longitude], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var marker = L.marker([teachers[n].coordinates.latitude, teachers[n].coordinates.longitude]).addTo(map);
 }
 
 function addToFav(n){
@@ -41,4 +49,9 @@ function addToFav(n){
 function closeInfo() {
     document.getElementById("info").style.display = "none";
     document.getElementById("bg").style.display = "none";
+    map.remove();
+    
+    let newmap = document.createElement("div");
+    newmap.id = "map";
+    document.getElementById("inner-info").appendChild(newmap);
 }

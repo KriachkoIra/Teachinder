@@ -4,6 +4,12 @@
     <head>
         <title>Teachinder</title>
         <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>
     </head>
     
     <body>
@@ -248,7 +254,7 @@
     <script src="scripts/openMap.js"></script>
   <button onclick="closeInfo()" class="closeButton">X</button>
   <div class="popupHeader"><h1>Teacher Info</h1></div>
-  <div class="inner-info">
+  <div class="inner-info" id="inner-info">
   <img src="img/teachers/1.png" alt="Teacher photo" id="popupPhoto">
     <div class="info-aside" id="popupInfo">
       <h2 id="popupName">Ihor Tkachuk</h2>
@@ -264,6 +270,8 @@
       <!--
     <button id="mapBtn" onclick="openMap()">toggle map</button>
       <div id="teacherMap"></div> -->
+      
+    <div id="map"></div>
   </div>
   
 </div>              
